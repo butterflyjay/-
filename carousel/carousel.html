@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>测试</title>
+  </head>
+  <link rel="stylesheet" href="carousel.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <div></div>
+  </body>
+  <script type="module">
+    import { Module, nodom } from "../nodom/dist/nodom.esm.js";
+    import "./carousel.js";
+    class main extends Module {
+      template() {
+        return `
+          <div>
+              <ui-carousel height="300" width="500">
+                  <ui-carousel-item>
+                      <img src="./imgs/test1.jpg" style="width: 100%;height:100%;">
+                  </ui-carousel-item>
+                  <ui-carousel-item>
+                      <img src="./imgs/test2.jpg" style="width: 100%;height:100%;">
+                  </ui-carousel-item>
+                  <ui-carousel-item>
+                      <img src="./imgs/test3.jpg" style="width: 100%;height:100%;">
+                  </ui-carousel-item>
+                  <ui-carousel-item>
+                      <img src="./imgs/test4.jpg" style="width: 100%;height:100%;">
+                  </ui-carousel-item>
+              </ui-carousel>
+          </div>
+            `;
+      }
+    }
+    nodom(main, "div");
+  </script>
+</html>
