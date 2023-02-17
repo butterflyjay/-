@@ -27,7 +27,7 @@ export class UICarousel extends Module {
         `
   }
   onCompile() {
-    const oTree = this.originTree;
+    let oTree = this.originTree;
     oTree.setProp("style", `height: ${this.__height}px; width: ${this.__width}px;`)
     for (let i = 0; i < this.__itemLen; i++) {
       let point = new VirtualDom("li", this.getDomKeyId() + '');
@@ -37,8 +37,10 @@ export class UICarousel extends Module {
       oTree.children[3].children.push(point);
       point.parent = oTree.children[3];
     }
-    const contents = this.srcDom.vdom.children[0].children;
+    let contents = this.srcDom.vdom.children[0].children;
     contents.push(contents[0].clone(true));
+    oTree = null;
+    contents = null;
   }
   /**
    * 向前点击
