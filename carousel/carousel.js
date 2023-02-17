@@ -79,10 +79,11 @@ export class UICarousel extends Module {
   __move(ds) {
     this.contentNode.style.transition = "1.1s";
     this.contentNode.style.transform = `translateX(${ds})`;
-    const el = this.getElement("$carouselPoint");
+    let el = this.getElement("$carouselPoint");
     el.children[this.__active].classList.remove("ui-carousel-point-active");
     this.__active = this.__currentIndex === this.__itemLen ? 0 : this.__currentIndex;
     el.children[this.__active].classList.add("ui-carousel-point-active");
+    el = null;
   }
   __point(model, vdom, Nevent, event) {
     this.__currentIndex = Number(vdom.props.index);
