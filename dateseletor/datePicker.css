@@ -1,0 +1,130 @@
+/* 最外层区域 */
+* {
+  box-sizing: border-box;
+}
+
+.ui-datepicker {
+  position: relative;
+}
+.ui-datepicker-wrapper {
+  position: absolute;
+  height: fit-content;
+  width: 238px;
+  color: #666666;
+  box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, 0.3);
+  background-color: white;
+}
+
+.ui-datepicker > .ui-datepicker-close {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: 0% 0%;
+  /*定义缩放起点*/
+  transform: scaleY(0);
+}
+
+.ui-datepicker > .ui-datepicker-open {
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: 0% 0%;
+  transform: scaleY(1);
+}
+
+/* 日期输入框 */
+.ui-datepicker-top {
+  width: 238px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  border: 1px solid #d5d6d8;
+}
+
+.ui-datepicker-top:hover {
+  border: 1px solid #73b8ff;
+  color: #73b8ff;
+}
+
+.ui-datepicker-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 100%;
+  padding: 2px 20px;
+  font-size: 16px;
+  background: none;
+  color: inherit;
+  text-align: center;
+}
+
+/* 头部区域 */
+.ui-datepicker-wrapper .ui-datepicker-header {
+  padding: 0 20px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background: #f0f0f0;
+  border-bottom: 1px solid #cccccc;
+  font-weight: bold;
+}
+
+/* 设置两个按钮 */
+.ui-datepicker-wrapper .ui-datepicker-btn {
+  font-family: serif;
+  font-size: 20px;
+  width: 20px;
+  height: 50px;
+  line-height: 50px;
+  color: #73b8ff;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ui-datepicker-wrapper .ui-datepicker-prev-btn {
+  float: left;
+}
+
+.ui-datepicker-wrapper .ui-datepicker-next-btn {
+  float: right;
+}
+
+.ui-datepicker-body {
+  width: 100%;
+}
+
+.ui-datepicker-week {
+  display: flex;
+  width: 100%;
+}
+
+.ui-datepicker-showweekday {
+  width: 34px;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.ui-datepicker-showday {
+  display: inline-block;
+  width: 34px;
+  cursor: pointer;
+  font-size: 10px;
+  border: 1px solid #f0f0f0;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.ui-datepicker-trueDay {
+  color: black;
+}
+
+.ui-datepicker-falseDay {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+.ui-datepicker-select {
+  background-color: #73b8ff;
+}
